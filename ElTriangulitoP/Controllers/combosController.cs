@@ -18,7 +18,7 @@ namespace ElTriangulitoP.Controllers
             _context = context;
         }
 
-        // GET: combos
+        // GET: combos 
         public async Task<IActionResult> Index()
         {
             return View(await _context.combos.ToListAsync());
