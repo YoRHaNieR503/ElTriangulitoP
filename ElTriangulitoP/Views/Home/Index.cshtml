@@ -5,17 +5,17 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Menú lateral -->
-        <nav id="sidebar" class="col-md-2 bg-dark vh-100 position-fixed">
-            <button class="btn btn-light m-3" id="menu-toggle">☰ Menú</button>
-            <ul class="nav flex-column mt-3" id="menu">
-                <li class="nav-item"><a href="/Mesas" class="nav-link text-white">Mesas</a></li>
-                <li class="nav-item"><a href="/Platos" class="nav-link text-white">Platos</a></li>
-                <li class="nav-item"><a href="/Combos" class="nav-link text-white">Combos</a></li>
-                <li class="nav-item"><a href="/Ordenes" class="nav-link text-white">Órdenes</a></li>
-            </ul>
-        </nav>
+        <div class="col-md-2">
+            <button class="btn btn-primary" id="menu-toggle">&#9776; Menú</button>
+            <div id="menu" class="d-none mt-2">
+                <a href="/Mesas" class="btn btn-secondary btn-block">Mesas</a>
+                <a href="/Platos" class="btn btn-secondary btn-block">Platos</a>
+                <a href="/Combos" class="btn btn-secondary btn-block">Combos</a>
+                <a href="/Ordenes" class="btn btn-secondary btn-block">Órdenes</a>
+            </div>
+        </div>
 
-        <div class="col-md-10 offset-md-2">
+        <div class="col-md-10">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center">Dashboard</h1>
@@ -93,6 +93,7 @@
                         <div class="card-body">
                             <ul>
                                 @foreach (var orden in (List<Ordenes>)ViewData["OrdenesRecientes"])
+
                                 {
                                     <li>
                                         <strong>Cliente:</strong> @orden.nombre_cliente <br />
